@@ -13,7 +13,7 @@ class _ProfilePageState extends State<ProfilePage> {
     return const Scaffold(
       body: Center(
         child: Text(
-          "ProfilePage",
+          "Perfil",
           style: TextStyle(
             color: Colors.white,
             fontSize: 24,

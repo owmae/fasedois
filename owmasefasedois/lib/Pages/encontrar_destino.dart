@@ -67,7 +67,7 @@ class _SearchDestinationPageState extends State<SearchDestinationPage>
 
                           const Center(
                             child: Text(
-                              "Set Dropoff Location",
+                              "Definir Destino",
                               style: TextStyle(
                                 fontSize: 18,
                                 fontWeight: FontWeight.bold,
@@ -103,7 +103,7 @@ class _SearchDestinationPageState extends State<SearchDestinationPage>
                                 child: TextField(
                                   controller: pickUpTextEditingController,
                                   decoration: const InputDecoration(
-                                      hintText: "Pickup Address",
+                                      hintText: "Endereço de Saída",
                                       fillColor: Colors.white12,
                                       filled: true,
                                       border: InputBorder.none,
@@ -143,7 +143,7 @@ class _SearchDestinationPageState extends State<SearchDestinationPage>
                                 child: TextField(
                                   controller: destinationTextEditingController,
                                   decoration: const InputDecoration(
-                                      hintText: "Destination Address",
+                                      hintText: "Endereço de Destino",
                                       fillColor: Colors.white12,
                                       filled: true,
                                       border: InputBorder.none,

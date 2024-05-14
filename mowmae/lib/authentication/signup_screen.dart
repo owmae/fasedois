@@ -45,7 +45,7 @@ class _SignUpScreenState extends State<SignUpScreen>
     }
     else
     {
-      cMethods.displaySnackBar("Please choose image first.", context);
+      cMethods.displaySnackBar("Escolha uma foto.", context);
     }
   }
 
@@ -53,31 +53,31 @@ class _SignUpScreenState extends State<SignUpScreen>
   {
     if(userNameTextEditingController.text.trim().length < 3)
     {
-      cMethods.displaySnackBar("your name must be atleast 4 or more characters.", context);
+      cMethods.displaySnackBar("seu nome deve ter mais que doi caractres.", context);
     }
     else if(userPhoneTextEditingController.text.trim().length < 7)
     {
-      cMethods.displaySnackBar("your phone number must be atleast 8 or more characters.", context);
+      cMethods.displaySnackBar("telefone deve ter mais de 8 digitos.", context);
     }
     else if(!emailTextEditingController.text.contains("@"))
     {
-      cMethods.displaySnackBar("please write valid email.", context);
+      cMethods.displaySnackBar("informe um email valido.", context);
     }
     else if(passwordTextEditingController.text.trim().length < 5)
     {
-      cMethods.displaySnackBar("your password must be atleast 6 or more characters.", context);
+      cMethods.displaySnackBar("sua senha deve ter mais que 8 caracteres.", context);
     }
     else if(vehicleModelTextEditingController.text.trim().isEmpty)
     {
-      cMethods.displaySnackBar("please write your car model", context);
+      cMethods.displaySnackBar("Informe o modelo do carro", context);
     }
     else if(vehicleColorTextEditingController.text.trim().isEmpty)
     {
-      cMethods.displaySnackBar("please write your car color.", context);
+      cMethods.displaySnackBar("Informe seu modelo.", context);
     }
     else if(vehicleNumberTextEditingController.text.isEmpty)
     {
-      cMethods.displaySnackBar("please write your car number.", context);
+      cMethods.displaySnackBar("Informe o numero da placa.", context);
     }
     else
     {
@@ -106,7 +106,7 @@ class _SignUpScreenState extends State<SignUpScreen>
     showDialog(
       context: context,
       barrierDismissible: false,
-      builder: (BuildContext context) => LoadingDialog(messageText: "Registering your account..."),
+      builder: (BuildContext context) => LoadingDialog(messageText: "Registrando sua conta..."),
     );
 
     final User? userFirebase = (
@@ -204,7 +204,7 @@ class _SignUpScreenState extends State<SignUpScreen>
                   chooseImageFromGallery();
                 },
                 child: const Text(
-                  "Choose Image",
+                  "Escolha a foto",
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
@@ -222,7 +222,7 @@ class _SignUpScreenState extends State<SignUpScreen>
                       controller: userNameTextEditingController,
                       keyboardType: TextInputType.text,
                       decoration: const InputDecoration(
-                        labelText: "your Name",
+                        labelText: "Seu nome",
                         labelStyle: TextStyle(
                           fontSize: 14,
                         ),
@@ -239,7 +239,7 @@ class _SignUpScreenState extends State<SignUpScreen>
                       controller: userPhoneTextEditingController,
                       keyboardType: TextInputType.text,
                       decoration: const InputDecoration(
-                        labelText: "your Phone",
+                        labelText: "Seu telefone",
                         labelStyle: TextStyle(
                           fontSize: 14,
                         ),
@@ -256,7 +256,7 @@ class _SignUpScreenState extends State<SignUpScreen>
                       controller: emailTextEditingController,
                       keyboardType: TextInputType.emailAddress,
                       decoration: const InputDecoration(
-                        labelText: "your Email",
+                        labelText: "seu Email",
                         labelStyle: TextStyle(
                           fontSize: 14,
                         ),
@@ -274,7 +274,7 @@ class _SignUpScreenState extends State<SignUpScreen>
                       obscureText: true,
                       keyboardType: TextInputType.text,
                       decoration: const InputDecoration(
-                        labelText: "your Password",
+                        labelText: "sua senha",
                         labelStyle: TextStyle(
                           fontSize: 14,
                         ),
@@ -291,7 +291,7 @@ class _SignUpScreenState extends State<SignUpScreen>
                       controller: vehicleModelTextEditingController,
                       keyboardType: TextInputType.text,
                       decoration: const InputDecoration(
-                        labelText: "your Car Model",
+                        labelText: "Modelo",
                         labelStyle: TextStyle(
                           fontSize: 14,
                         ),
@@ -308,7 +308,7 @@ class _SignUpScreenState extends State<SignUpScreen>
                       controller: vehicleColorTextEditingController,
                       keyboardType: TextInputType.text,
                       decoration: const InputDecoration(
-                        labelText: "your Car Color",
+                        labelText: "Cor do Carro",
                         labelStyle: TextStyle(
                           fontSize: 14,
                         ),
@@ -325,7 +325,7 @@ class _SignUpScreenState extends State<SignUpScreen>
                       controller: vehicleNumberTextEditingController,
                       keyboardType: TextInputType.text,
                       decoration: const InputDecoration(
-                        labelText: "your Car Number",
+                        labelText: "Placa",
                         labelStyle: TextStyle(
                           fontSize: 14,
                         ),
@@ -365,7 +365,7 @@ class _SignUpScreenState extends State<SignUpScreen>
                   Navigator.push(context, MaterialPageRoute(builder: (c)=> LoginScreen()));
                 },
                 child: const Text(
-                  "Already have an Account? Login Here",
+                  "tem uma conta? Faça o login",
                   style: TextStyle(
                     color: Colors.grey,
                   ),

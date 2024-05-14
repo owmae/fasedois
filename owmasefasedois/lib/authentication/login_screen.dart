@@ -38,11 +38,11 @@ class _LoginScreenState extends State<LoginScreen>
 
     if(!emailTextEditingController.text.contains("@"))
     {
-      cMethods.displaySnackBar("please write valid email.", context);
+      cMethods.displaySnackBar("Informe um email valido.", context);
     }
     else if(passwordTextEditingController.text.trim().length < 5)
     {
-      cMethods.displaySnackBar("your password must be atleast 6 or more characters.", context);
+      cMethods.displaySnackBar("sua senha deve ter mais de que 6 caracteres.", context);
     }
     else
     {
@@ -55,7 +55,7 @@ class _LoginScreenState extends State<LoginScreen>
     showDialog(
       context: context,
       barrierDismissible: false,
-      builder: (BuildContext context) => LoadingDialog(messageText: "Allowing you to Login..."),
+      builder: (BuildContext context) => LoadingDialog(messageText: "fazendo seu login..."),
     );
 
     final User? userFirebase = (
@@ -88,13 +88,13 @@ class _LoginScreenState extends State<LoginScreen>
           else
           {
             FirebaseAuth.instance.signOut();
-            cMethods.displaySnackBar("you are blocked. Contact admin: alizeb875@gmail.com", context);
+            cMethods.displaySnackBar("contato bloqueado", context);
           }
         }
         else
         {
           FirebaseAuth.instance.signOut();
-          cMethods.displaySnackBar("your record do not exists as a User.", context);
+          cMethods.displaySnackBar("seu registro não existe, faça um cadastro.", context);
         }
       });
     }
@@ -114,14 +114,14 @@ class _LoginScreenState extends State<LoginScreen>
               ),
 
               const Text(
-                "Login as a User",
+                "Login como um Usuário",
                 style: TextStyle(
                   fontSize: 26,
                   fontWeight: FontWeight.bold,
                 ),
               ),
 
-              //text fields + button
+              //campos de texto mais botões
               Padding(
                 padding: const EdgeInsets.all(22),
                 child: Column(
@@ -131,7 +131,7 @@ class _LoginScreenState extends State<LoginScreen>
                       controller: emailTextEditingController,
                       keyboardType: TextInputType.emailAddress,
                       decoration: const InputDecoration(
-                        labelText: "User Email",
+                        labelText: "Email",
                         labelStyle: TextStyle(
                           fontSize: 14,
                         ),
@@ -149,7 +149,7 @@ class _LoginScreenState extends State<LoginScreen>
                       obscureText: true,
                       keyboardType: TextInputType.text,
                       decoration: const InputDecoration(
-                        labelText: "User Password",
+                        labelText: "Senha",
                         labelStyle: TextStyle(
                           fontSize: 14,
                         ),
@@ -189,7 +189,7 @@ class _LoginScreenState extends State<LoginScreen>
                   Navigator.push(context, MaterialPageRoute(builder: (c)=> SignUpScreen()));
                 },
                 child: const Text(
-                  "Don\'t have an Account? Register Here",
+                  "Não tem uma conta? Registre agora.",
                   style: TextStyle(
                     color: Colors.grey,
                   ),

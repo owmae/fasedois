@@ -36,19 +36,19 @@ class _SignUpScreenState extends State<SignUpScreen>
   {
     if(userNameTextEditingController.text.trim().length < 3)
     {
-      cMethods.displaySnackBar("your name must be atleast 4 or more characters.", context);
+      cMethods.displaySnackBar("seu nome deve ter no mínimo 4 letras.", context);
     }
     else if(userPhoneTextEditingController.text.trim().length < 7)
     {
-      cMethods.displaySnackBar("your phone number must be atleast 8 or more characters.", context);
+      cMethods.displaySnackBar("seu telefone deve ter no mínimo 8 letras.", context);
     }
     else if(!emailTextEditingController.text.contains("@"))
     {
-      cMethods.displaySnackBar("please write valid email.", context);
+      cMethods.displaySnackBar("informe um email válido.", context);
     }
     else if(passwordTextEditingController.text.trim().length < 5)
     {
-      cMethods.displaySnackBar("your password must be atleast 6 or more characters.", context);
+      cMethods.displaySnackBar("sua senha deve ter no mínimo 6 caracteres.", context);
     }
     else
     {
@@ -61,7 +61,7 @@ class _SignUpScreenState extends State<SignUpScreen>
     showDialog(
       context: context,
       barrierDismissible: false,
-      builder: (BuildContext context) => LoadingDialog(messageText: "Registering your account..."),
+      builder: (BuildContext context) => LoadingDialog(messageText: "Registrando sua conta..."),
     );
 
     final User? userFirebase = (
@@ -107,7 +107,7 @@ class _SignUpScreenState extends State<SignUpScreen>
               ),
 
               const Text(
-                "Create a User\'s Account",
+                "Criar uma conta de Usuário",
                 style: TextStyle(
                   fontSize: 26,
                   fontWeight: FontWeight.bold,
@@ -124,7 +124,7 @@ class _SignUpScreenState extends State<SignUpScreen>
                       controller: userNameTextEditingController,
                       keyboardType: TextInputType.text,
                       decoration: const InputDecoration(
-                        labelText: "User Name",
+                        labelText: "Nome",
                         labelStyle: TextStyle(
                           fontSize: 14,
                         ),
@@ -141,7 +141,7 @@ class _SignUpScreenState extends State<SignUpScreen>
                       controller: userPhoneTextEditingController,
                       keyboardType: TextInputType.text,
                       decoration: const InputDecoration(
-                        labelText: "User Phone",
+                        labelText: "Telefone",
                         labelStyle: TextStyle(
                           fontSize: 14,
                         ),
@@ -158,7 +158,7 @@ class _SignUpScreenState extends State<SignUpScreen>
                       controller: emailTextEditingController,
                       keyboardType: TextInputType.emailAddress,
                       decoration: const InputDecoration(
-                        labelText: "User Email",
+                        labelText: "Email",
                         labelStyle: TextStyle(
                           fontSize: 14,
                         ),
@@ -176,7 +176,7 @@ class _SignUpScreenState extends State<SignUpScreen>
                       obscureText: true,
                       keyboardType: TextInputType.text,
                       decoration: const InputDecoration(
-                        labelText: "User Password",
+                        labelText: "Senha",
                         labelStyle: TextStyle(
                           fontSize: 14,
                         ),
@@ -199,7 +199,7 @@ class _SignUpScreenState extends State<SignUpScreen>
                         padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 10)
                       ),
                       child: const Text(
-                        "Sign Up"
+                        "Cadastrar"
                       ),
                     ),
 
@@ -216,7 +216,7 @@ class _SignUpScreenState extends State<SignUpScreen>
                   Navigator.push(context, MaterialPageRoute(builder: (c)=> LoginScreen()));
                 },
                 child: const Text(
-                  "Already have an Account? Login Here",
+                  "Já tem uma conta? Faça login",
                   style: TextStyle(
                     color: Colors.grey,
                   ),

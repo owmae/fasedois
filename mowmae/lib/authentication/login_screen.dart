@@ -36,11 +36,11 @@ class _LoginScreenState extends State<LoginScreen>
 
     if(!emailTextEditingController.text.contains("@"))
     {
-      cMethods.displaySnackBar("please write valid email.", context);
+      cMethods.displaySnackBar("por favor, informe um e-mail valido.", context);
     }
     else if(passwordTextEditingController.text.trim().length < 5)
     {
-      cMethods.displaySnackBar("your password must be atleast 6 or more characters.", context);
+      cMethods.displaySnackBar("sua senha deve ter pelo menos 6 ou mais caracteres.", context);
     }
     else
     {
@@ -53,7 +53,7 @@ class _LoginScreenState extends State<LoginScreen>
     showDialog(
       context: context,
       barrierDismissible: false,
-      builder: (BuildContext context) => LoadingDialog(messageText: "Allowing you to Login..."),
+      builder: (BuildContext context) => LoadingDialog(messageText: "Permitindo que voce faca login..."),
     );
 
     final User? userFirebase = (
@@ -85,13 +85,13 @@ class _LoginScreenState extends State<LoginScreen>
           else
           {
             FirebaseAuth.instance.signOut();
-            cMethods.displaySnackBar("you are blocked. Contact admin: alizeb875@gmail.com", context);
+            cMethods.displaySnackBar("Acesso bloqueado", context);
           }
         }
         else
         {
           FirebaseAuth.instance.signOut();
-          cMethods.displaySnackBar("your record do not exists as a Driver.", context);
+          cMethods.displaySnackBar("seu registro não existe como um motorista.", context);
         }
       });
     }
@@ -111,7 +111,7 @@ class _LoginScreenState extends State<LoginScreen>
               ),
 
               Image.asset(
-                  "assets/images/uberexec.png",
+                  "assets/images/owmae.png",
                 width: 220,
               ),
 
@@ -120,7 +120,7 @@ class _LoginScreenState extends State<LoginScreen>
               ),
 
               const Text(
-                "Login as a Driver",
+                "Login como Motorista",
                 style: TextStyle(
                   fontSize: 26,
                   fontWeight: FontWeight.bold,
@@ -137,7 +137,7 @@ class _LoginScreenState extends State<LoginScreen>
                       controller: emailTextEditingController,
                       keyboardType: TextInputType.emailAddress,
                       decoration: const InputDecoration(
-                        labelText: "your Email",
+                        labelText: "seu Email",
                         labelStyle: TextStyle(
                           fontSize: 14,
                         ),
@@ -155,7 +155,7 @@ class _LoginScreenState extends State<LoginScreen>
                       obscureText: true,
                       keyboardType: TextInputType.text,
                       decoration: const InputDecoration(
-                        labelText: "your Password",
+                        labelText: "senha",
                         labelStyle: TextStyle(
                           fontSize: 14,
                         ),
@@ -195,7 +195,7 @@ class _LoginScreenState extends State<LoginScreen>
                   Navigator.push(context, MaterialPageRoute(builder: (c)=> SignUpScreen()));
                 },
                 child: const Text(
-                  "Don\'t have an Account? Register Here",
+                  "Crie uma conta",
                   style: TextStyle(
                     color: Colors.grey,
                   ),

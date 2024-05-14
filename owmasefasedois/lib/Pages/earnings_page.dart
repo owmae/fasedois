@@ -13,7 +13,7 @@ class _EarningsPageState extends State<EarningsPage> {
     return const Scaffold(
       body: Center(
         child: Text(
-          "EarningsPage",
+          "Ganhos",
           style: TextStyle(
             color: Colors.white,
             fontSize: 24,

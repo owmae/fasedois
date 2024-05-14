@@ -132,7 +132,7 @@ class _HomePageState extends State<HomePage>
 
           Navigator.push(context, MaterialPageRoute(builder: (c)=> LoginScreen()));
 
-          cMethods.displaySnackBar("you are blocked. Contact admin: alizeb875@gmail.com", context);
+          cMethods.displaySnackBar("Conta Bloqueada", context);
         }
       }
       else
@@ -167,7 +167,7 @@ class _HomePageState extends State<HomePage>
     showDialog(
       barrierDismissible: false,
       context: context,
-      builder: (BuildContext context) => LoadingDialog(messageText: "Getting direction..."),
+      builder: (BuildContext context) => LoadingDialog(messageText: "Obtendo Destino..."),
     );
 
     ///Directions API
@@ -178,7 +178,7 @@ class _HomePageState extends State<HomePage>
 
     Navigator.pop(context);
 
-    //draw route from pickup to dropOffDestination
+    //Traçar a rota de origem e destino
     PolylinePoints pointsPolyline = PolylinePoints();
     List<PointLatLng> latLngPointsFromPickUpToDestination = pointsPolyline.decodePolyline(tripDirectionDetailsInfo!.encodedPoints!);
 
@@ -347,7 +347,7 @@ class _HomePageState extends State<HomePage>
       LatLng driverCurrentPosition = LatLng(eachOnlineNearbyDriver.latDriver!, eachOnlineNearbyDriver.lngDriver!);
 
       Marker driverMarker = Marker(
-        markerId: MarkerId("driver ID = " + eachOnlineNearbyDriver.uidDriver.toString()),
+        markerId: MarkerId("ID do Motorista = " + eachOnlineNearbyDriver.uidDriver.toString()),
         position: driverCurrentPosition,
         icon: carIconNearbyDriver!,
       );
@@ -477,8 +477,8 @@ class _HomePageState extends State<HomePage>
         context: context,
         barrierDismissible: false,
         builder: (BuildContext context) => InfoDialog(
-          title: "No Driver Available",
-          description: "No driver found in the nearby location. Please try again shortly.",
+          title: "Nenhuma motorista no momento",
+          description: "nehuma motorista encontrada no local no momento.",
         )
     );
   }
@@ -595,7 +595,7 @@ class _HomePageState extends State<HomePage>
                           const SizedBox(height: 4,),
 
                           const Text(
-                            "Profile",
+                            "Perfil",
                             style: TextStyle(
                               color: Colors.white38,
                             ),
@@ -623,7 +623,7 @@ class _HomePageState extends State<HomePage>
                   onPressed: (){},
                   icon: const Icon(Icons.info, color: Colors.grey,),
                 ),
-                title: const Text("About", style: TextStyle(color: Colors.grey),),
+                title: const Text("Sobre", style: TextStyle(color: Colors.grey),),
               ),
 
               GestureDetector(
@@ -715,7 +715,7 @@ class _HomePageState extends State<HomePage>
             ),
           ),
 
-          ///search location icon button
+          ///botao localizar
           Positioned(
             left: 0,
             right: 0,
@@ -781,7 +781,7 @@ class _HomePageState extends State<HomePage>
             ),
           ),
 
-          ///ride details container
+          ///detalhes da corrida
           Positioned(
             left: 0,
             right: 0,

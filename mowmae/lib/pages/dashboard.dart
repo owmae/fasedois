@@ -31,7 +31,7 @@ class _DashboardState extends State<Dashboard> with SingleTickerProviderStateMix
 
   @override
   void initState() {
-    // TODO: implement initState
+    // TODO: Implementação do Stado inicial do App
     super.initState();
 
     controller = TabController(length: 4, vsync: this);
@@ -39,7 +39,7 @@ class _DashboardState extends State<Dashboard> with SingleTickerProviderStateMix
 
   @override
   void dispose() {
-    // TODO: implement dispose
+    // TODO: implementação de fechar o app
     controller!.dispose();
     super.dispose();
   }
@@ -67,15 +67,15 @@ class _DashboardState extends State<Dashboard> with SingleTickerProviderStateMix
           ),
           BottomNavigationBarItem(
               icon: Icon(Icons.credit_card),
-              label: "Earnings"
+              label: "Receber"
           ),
           BottomNavigationBarItem(
               icon: Icon(Icons.account_tree),
-              label: "Trips"
+              label: "Viagens"
           ),
           BottomNavigationBarItem(
               icon: Icon(Icons.person),
-              label: "Profile"
+              label: "Perfil"
           ),
         ],
         currentIndex: indexSelected,

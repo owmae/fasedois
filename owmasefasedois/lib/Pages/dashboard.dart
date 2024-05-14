@@ -67,15 +67,15 @@ class _DashboardState extends State<Dashboard> with SingleTickerProviderStateMix
           ),
           BottomNavigationBarItem(
               icon: Icon(Icons.credit_card),
-              label: "Earnings"
+              label: "Pago"
           ),
           BottomNavigationBarItem(
               icon: Icon(Icons.account_tree),
-              label: "Trips"
+              label: "Viagens"
           ),
           BottomNavigationBarItem(
               icon: Icon(Icons.person),
-              label: "Profile"
+              label: "Perfil"
           ),
         ],
         currentIndex: indexSelected,

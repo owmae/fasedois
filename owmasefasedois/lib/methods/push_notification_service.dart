@@ -21,8 +21,8 @@ class PushNotificationService
 
     Map titleBodyNotificationMap =
     {
-      "title": "NET TRIP REQUEST from $userName",
-      "body": "PickUp Location: $pickUpAddress \nDropOff Location: $dropOffDestinationAddress",
+      "title": "PEDIDO DE VIAGEM from $userName",
+      "body": "Endereço de Saída: $pickUpAddress \nEndereço de Destino: $dropOffDestinationAddress",
     };
 
     Map dataMapNotification =

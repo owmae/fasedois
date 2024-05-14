@@ -13,7 +13,7 @@ class _TripsPageState extends State<TripsPage> {
     return const Scaffold(
       body: Center(
         child: Text(
-          "TripsPage",
+          "Viagens",
           style: TextStyle(
             color: Colors.white,
             fontSize: 24,

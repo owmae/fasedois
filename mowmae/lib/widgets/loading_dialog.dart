@@ -16,7 +16,7 @@ class LoadingDialog extends StatelessWidget
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
       ),
-      backgroundColor: Colors.black87,
+      backgroundColor: Colors.white,
       child: Container(
         margin: const EdgeInsets.all(15),
         width: double.infinity,
@@ -41,7 +41,7 @@ class LoadingDialog extends StatelessWidget
                 messageText,
                 style: const TextStyle(
                   fontSize: 16,
-                  color: Colors.white,
+                  color: Colors.black,
                 ),
               ),
 

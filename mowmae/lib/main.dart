@@ -38,10 +38,10 @@ class MyApp extends StatelessWidget
   Widget build(BuildContext context)
   {
     return MaterialApp(
-      title: 'Drivers App',
+      title: 'APP MOTORISTA',
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
-        scaffoldBackgroundColor: Colors.black,
+        scaffoldBackgroundColor: Colors.white,
       ),
       home: FirebaseAuth.instance.currentUser == null ? LoginScreen() : HomePage(),
     );

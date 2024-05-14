@@ -21,7 +21,7 @@ class CommonMethods
     if(connectionResult != ConnectivityResult.mobile && connectionResult != ConnectivityResult.wifi)
     {
       if(!context.mounted) return;
-      displaySnackBar("your Internet is not Available. Check your connection. Try Again.", context);
+      displaySnackBar("você está sem internet.Tente novamente", context);
     }
   }
 
@@ -78,7 +78,7 @@ class CommonMethods
     return humanReadableAddress;
   }
 
-  ///Directions API
+  ///API de Direcionamdntos
   static Future<DirectionDetails?> getDirectionDetailsFromAPI(LatLng source, LatLng destination) async
   {
     String urlDirectionsAPI = "https://maps.googleapis.com/maps/api/directions/json?destination=${destination.latitude},${destination.longitude}&origin=${source.latitude},${source.longitude}&mode=driving&key=$googleMapKey";

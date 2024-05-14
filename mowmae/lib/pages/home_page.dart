@@ -26,7 +26,7 @@ class _HomePageState extends State<HomePage>
   GoogleMapController? controllerGoogleMap;
   Position? currentPositionOfUser;
   Color colorToShow = Colors.green;
-  String titleToShow = "GO ONLINE NOW";
+  String titleToShow = "IR PARA ONLINE AGORA";
   bool isDriverAvailable = false;
   DatabaseReference? newTripRequestReference;
 
@@ -61,7 +61,7 @@ class _HomePageState extends State<HomePage>
 
   goOnlineNow()
   {
-    //all drivers who are Available for new trip requests
+    //todos os motoristas que estão disponíveis para novas solicitações de viagem
     Geofire.initialize("onlineDrivers");
 
     Geofire.setLocation(
@@ -102,10 +102,10 @@ class _HomePageState extends State<HomePage>
 
   goOfflineNow()
   {
-    //stop sharing driver live location updates
+    // parar de compartilhar atualizações de localização ao vivo do motorista
     Geofire.removeLocation(FirebaseAuth.instance.currentUser!.uid);
 
-    //stop listening to the newTripStatus
+    //para de ver as novas viagens
     newTripRequestReference!.onDisconnect();
     newTripRequestReference!.remove();
     newTripRequestReference = null;
@@ -115,12 +115,12 @@ class _HomePageState extends State<HomePage>
   {
     PushNotificationSystem notificationSystem = PushNotificationSystem();
     notificationSystem.generateDeviceRegistrationToken();
-    notificationSystem.startListeningForNewNotification();
+    notificationSystem.startListeningForNewNotification(context);
   }
 
   @override
   void initState() {
-    // TODO: implement initState
+    // TODO: impplementação de todo o codigo
     super.initState();
 
     initializePushNotificationSystem();
@@ -152,10 +152,10 @@ class _HomePageState extends State<HomePage>
           Container(
             height: 136,
             width: double.infinity,
-            color: Colors.black54,
+            color: Colors.white,
           ),
 
-          ///go online offline button
+          ///ir para os botões online e offline
           Positioned(
             top: 61,
             left: 0,
@@ -174,7 +174,7 @@ class _HomePageState extends State<HomePage>
                         {
                           return Container(
                             decoration: const BoxDecoration(
-                              color: Colors.black87,
+                              color: Colors.white,
                               boxShadow:
                               [
                                 BoxShadow(
@@ -197,7 +197,7 @@ class _HomePageState extends State<HomePage>
                                   const SizedBox(height:  11,),
 
                                   Text(
-                                      (!isDriverAvailable) ? "GO ONLINE NOW" : "GO OFFLINE NOW",
+                                      (!isDriverAvailable) ? "IR PARA ONLINE AGORA" : "IR PARA OFFLINE AGORA",
                                     textAlign: TextAlign.center,
                                     style: const TextStyle(
                                       fontSize: 22,
@@ -210,8 +210,8 @@ class _HomePageState extends State<HomePage>
 
                                   Text(
                                     (!isDriverAvailable)
-                                        ? "You are about to go online, you will become available to receive trip requests from users."
-                                        : "You are about to go offline, you will stop receiving new trip requests from users.",
+                                        ? "Você está prestes a ficar on-line e ficará disponível para receber solicitações de viagem dos usuários."
+                                        : "Você está prestes a ficar off-line e deixará de receber novas solicitações de viagem dos usuários.",
                                     textAlign: TextAlign.center,
                                     style: const TextStyle(
                                       color: Colors.white30,
@@ -230,7 +230,7 @@ class _HomePageState extends State<HomePage>
                                             Navigator.pop(context);
                                           },
                                           child: const Text(
-                                            "BACK"
+                                            "VOLTAR"
                                           ),
                                         ),
                                       ),
@@ -243,41 +243,41 @@ class _HomePageState extends State<HomePage>
                                           {
                                             if(!isDriverAvailable)
                                             {
-                                              //go online
+                                              //ir para online
                                               goOnlineNow();
 
-                                              //get driver location updates
+                                              //buscar motorista e aturalizar a localização
                                               setAndGetLocationUpdates();
 
                                               Navigator.pop(context);
 
                                               setState(() {
                                                 colorToShow = Colors.pink;
-                                                titleToShow = "GO OFFLINE NOW";
+                                                titleToShow = "IR PARA OFFLINE AGORA";
                                                 isDriverAvailable = true;
                                               });
                                             }
                                             else
                                             {
-                                              //go offline
+                                              //ir para offline agora
                                               goOfflineNow();
 
                                               Navigator.pop(context);
 
                                               setState(() {
                                                 colorToShow = Colors.green;
-                                                titleToShow = "GO ONLINE NOW";
+                                                titleToShow = "IR PARA ONLINE AGORA";
                                                 isDriverAvailable = false;
                                               });
                                             }
                                           },
                                           style: ElevatedButton.styleFrom(
-                                            backgroundColor: (titleToShow == "GO ONLINE NOW")
+                                            backgroundColor: (titleToShow == "IR PARA ONLINE AGORA")
                                                 ? Colors.green
                                                 : Colors.pink,
                                           ),
                                           child: const Text(
-                                              "CONFIRM"
+                                              "CONFIRMAR"
                                           ),
                                         ),
                                       ),
