@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "550414346230",
+    "project_id": "owmaefasedois-57042",
+    "storage_bucket": "owmaefasedois-57042.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:550414346230:android:ab6906b614773c09a7c9d7",
+        "android_client_info": {
+          "package_name": "com.owmae.owmasefasedois"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDC7nTCWVbxqCfW5iUsMS8gYb7Os9RLFRA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
